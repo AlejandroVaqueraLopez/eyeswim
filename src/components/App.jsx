@@ -7,15 +7,14 @@ import Series from '../components/Series';
 import Loading from '../components/Loading';
 import Button from '../components/Button';
 
-
 //native functions
-import { getMovies } from '../utils/getMovies';
+import { getSeries } from '../utils/getSeries';
  
 function App () {
   const searchRef = useRef(null);
-  const [query, setQuery] = useState('avengers');
+  const [query, setQuery] = useState('music');
 
-  const { response, loading } = useFetcher(query, getMovies);
+  const { response, loading } = useFetcher("https://api.tvmaze.com/search/shows",query, getSeries);
 
   //when search input is submited
   const handleSubmit = async (e) => {
