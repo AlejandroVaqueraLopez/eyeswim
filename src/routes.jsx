@@ -13,7 +13,7 @@ const Paths = () => {
             <Routes>
                 <Route path='/' element={<Outlet />}>
                     <Route index element={<App />}/>
-                    <Route path=':movieId' element={<MovieDetails />}/>
+                    <Route path=':id' element={<MovieDetails />}/>
                 </Route>
 
                 <Route path='/1' element={<p>1</p>}/>

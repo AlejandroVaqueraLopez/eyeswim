@@ -1,14 +1,12 @@
 //hooks
 import { useState, useEffect } from 'react';
-//native functions
-import { getMovies, getMovie  } from "../utils/getMovies";
 
-const useFetcher = (query, callback) => {
+const useFetcher = (url, query, callback) => {
   const [response, setResponse] = useState([]);//this will save the movie array
   const [loading, setLoading] = useState(true);//loading status
 
   const getData = async () => {
-    const search = await callback(query);
+    const search = await callback(url, query);
     console.log(search);
 
     setResponse(search);

@@ -2,25 +2,25 @@
 import { useParams } from 'react-router-dom';
 import useFetcher from './useFetcher';
 //components
-import CardMovieDetails from './CardMovieDetails';
+import CardSeriesDetails from './CardSeriesDetails';
 import Loading from './Loading';
 
 //native functions
-import { getMovie } from "../utils/getMovies";
+import { getSerie } from "../utils/getSeries";
 
-const MovieDetails = () => {
+const SerieDetails = () => {
   //hooks
-  const { movieId } = useParams();
-  const { response, loading } = useFetcher(movieId, getMovie);
+  const { id } = useParams();
+  const { response, loading } = useFetcher(`https://api.tvmaze.com/shows`, id, getSerie);
   
   return (
     loading ? <Loading />
     : (
       <section className="py-4">
-        <CardMovieDetails data={ response }/>
+        <CardSeriesDetails data={ response }/>
       </section>
     )
   );
 }
 
-export default MovieDetails;
+export default SerieDetails;
