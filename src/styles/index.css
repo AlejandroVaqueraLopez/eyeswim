@@ -1,0 +1,48 @@
+body {
+  background-color: #1B2430;
+  color:#fff;
+  font-family: 'Rubik', sans-serif;
+}
+
+.card {
+  height:auto;
+  width:250px;
+}
+
+li{
+  list-style:none;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: #1B2430 !important;
+}
+
+.logo-img{
+  width:150px;
+}
+
+/*global styles*/
+.bs {
+  box-shadow: 2px 2px 3px #000;
+}
+.br {
+  border-radius: 10px;
+}
+
+/*buttons styles*/
+
+/*inputs styles*/
+.txtInput {
+  height:50px;
+  width:70%;
+  max-width:800px;
+  min-width: 250px;
+}
+
