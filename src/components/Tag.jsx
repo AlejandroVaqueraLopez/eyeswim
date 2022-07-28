@@ -1,7 +1,9 @@
 const styles = {
     borderRadius: "10px",
     width: "auto",
-    padding: "10px 15px"
+    padding: "10px 15px",
+    color: "#fff",
+    fontWeight: "bold"
 }
 
 const Tag = ({ data, background }) => {

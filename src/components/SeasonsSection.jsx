@@ -13,22 +13,15 @@ import { getEpisodes } from "../utils/getSeries";
 const SeasonsSection = ({data}) => {
 
     const select = useRef(null);
-    const [seasonNumber, setSeasonNumber] = useState(data[0].id);
-    const [seasonId, setSeasonId] = useState(data[0].id);
-    const [episodes, setEpisodes] = useState([]);
+    const [seasonId, setSeasonId] = useState(data[0]?.id);
 
     const { response, loading } = useFetcher("https://api.tvmaze.com/seasons", seasonId, getEpisodes);
 
     const handleSelect = (e) => {
         e.preventDefault();
         const selected = select.current.value;
-        setSeasonNumber(selected);//useState change here, so re-render every time
         setSeasonId(selected);//useState change here, so re-render every time
     }
-
-    useEffect(() => {
-        setEpisodes(response);
-    }, [seasonNumber]);
 
     return (
         <div className="card max-card my-5 p-5 br bs" >
@@ -49,7 +42,11 @@ const SeasonsSection = ({data}) => {
             <div className="row my-4">
                 <div className="col-12 p-0">
                     <div className="accordion" id="accordionExample">
-                        <AccordionItem data={episodes} />
+                        {
+                            response.map(episode => (
+                                <AccordionItem key={episode.id} data={episode} />
+                            ))
+                        }
                     </div>
                 </div>
             </div>
