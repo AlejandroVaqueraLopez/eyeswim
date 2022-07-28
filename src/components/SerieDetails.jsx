@@ -8,13 +8,13 @@ import CardSeriesDetails from './CardSeriesDetails';
 import Loading from './Loading';
 
 //native functions
-import { getSerie } from "../utils/getSeries";
+import { getSerie, getSeasons } from "../utils/getSeries";
 
 const SerieDetails = () => {
   //hooks
   const { id } = useParams();
   const { response: seriesData, loading } = useFetcher(`https://api.tvmaze.com/shows`, id, getSerie);
-  const { response: seasonData } = useFetcher(`https://api.tvmaze.com/seasons`, id, getSerie);
+  const { response: seasonData } = useFetcher(`https://api.tvmaze.com/shows`, id, getSeasons);
   
   return (
     loading ? <Loading />

@@ -4,7 +4,6 @@ import axios from "axios";
 //search by query
 export const getSeries = async ( url, query ) => {
     const  {data}  = await axios.get(`${url}?q=${query}`);
-    console.log(data);
     return data.length !== 0 ? data : [];
 }
 
@@ -15,9 +14,16 @@ export const getSerie = async (url, id ) => {
     return data;
 }
 
-//search episodes of a season
-export const getSeason = async (url, id ) => {
-    console.log(url, id)
-    const { data,status } = await axios.get(`${url}/${id}`);
+//search season list of a show
+export const getSeasons = async (url, id ) => {
+    const { data, status } = await axios.get(`${url}/${id}/seasons`);
+    return data;
+}
+
+//search all episodes of a season
+export const getEpisodes = async (url, id ) => {
+    console.log(url,id);
+    const { data } = await axios.get(`${url}/${id}/episodes`);
+    console.log(data)
     return data;
 }

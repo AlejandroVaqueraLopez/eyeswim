@@ -1,5 +1,6 @@
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css'; // always install packages before your code
+import 'bootstrap/dist/js/bootstrap.min.js'; // always install packages before your code
 import './styles/index.css';
 
 // libraries
