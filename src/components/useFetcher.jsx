@@ -7,7 +7,6 @@ const useFetcher = (url, query, callback) => {
 
   const getData = async () => {
     const search = await callback(url, query);
-    console.log(search);
 
     setResponse(search);
 

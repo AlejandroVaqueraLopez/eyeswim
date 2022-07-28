@@ -66,3 +66,13 @@ li{
   min-width: 250px;
 }
 
+/*fonts sizes*/
+.summary-paragraph {
+  font-size:18px;
+  line-height:23px;
+}@media only screen and (max-width: 500px) {
+  .summary-paragraph {
+    font-size:15px;
+    line-height:20px;
+  }
+}

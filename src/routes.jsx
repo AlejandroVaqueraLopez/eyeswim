@@ -4,7 +4,7 @@ import { Routes, Route, Outlet} from 'react-router-dom';
 //components
 import Navbar from "./components/Navbar";
 import App from "./components/App";
-import MovieDetails from "./components/MovieDetails";
+import SerieDetails from "./components/SerieDetails";
 
 const Paths = () => {
     return (
@@ -13,7 +13,7 @@ const Paths = () => {
             <Routes>
                 <Route path='/' element={<Outlet />}>
                     <Route index element={<App />}/>
-                    <Route path=':id' element={<MovieDetails />}/>
+                    <Route path=':id' element={<SerieDetails />}/>
                 </Route>
 
                 <Route path='/1' element={<p>1</p>}/>
