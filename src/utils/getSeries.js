@@ -22,8 +22,6 @@ export const getSeasons = async (url, id ) => {
 
 //search all episodes of a season
 export const getEpisodes = async (url, id ) => {
-    console.log(url,id);
     const { data } = await axios.get(`${url}/${id}/episodes`);
-    console.log(data)
     return data;
 }
