@@ -4,9 +4,28 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-.card {
+.mini-card {
   height:auto;
+  min-height: 400px;
   width:250px;
+  background-color: #2B3543;
+}
+.mini-card-img {
+  height:300px;
+  object-fit: cover;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.mid-card {
+  height:auto;
+  width:40%;
+}
+
+.max-card {
+  height:auto;
+  width:100%;
+  background-color: #2B3543;
 }
 
 li{
@@ -29,11 +48,12 @@ li{
 }
 
 /*global styles*/
-.bs {
-  box-shadow: 2px 2px 3px #000;
-}
 .br {
   border-radius: 10px;
+}
+
+.bs {
+  filter: drop-shadow(11px 11px 5px #151b25);
 }
 
 /*buttons styles*/
