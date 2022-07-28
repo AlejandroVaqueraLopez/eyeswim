@@ -1,30 +1,38 @@
-//hooks 
+//Home page where all shows are shown
+
+//components
+import Tag from "../components/Tag";
+
 //dependencies
 import { NavLink } from 'react-router-dom';
 
+//native utils
+import { validateSeriesData } from '../utils/validate';
+
 const CardSeries = ({ data }) => {
 
-  //optional chaining
-  const [id, name, premiered, summary, language, image] = [
-    data?.id || Math.random(),
-    data?.name || "No name",
-    data?.premiered || "No date",
-    data?.summary || "No summary",
-    data?.language || "No language",
-    data?.image?.original || data?.image?.medium || "https://estaticos.muyinteresante.es/uploads/images/gallery/5eb014125bafe80d70a6db24/curiosidades-reptiles_0.jpg"
-  ];
-  console.log(id)
+  //custom function to validate data from api
+  const { id, name, premiered, ended, summary, language, genres, rating, image, url } = validateSeriesData(data);
 
   return (
     <NavLink className="nav-link" to={`/${id}`}>
 
-      <div className="card bg-dark my-4">
-        <img src={image} className="card-img-top" alt="" />
+      <div className="card mini-card my-4 bs br">
+        <img src={image} className="card-img-top mini-card-img" alt="" />
         <div className="card-body text-white">
           <h5 className="card-title line-clamp">{name}</h5>
-          <h6 className="card-text">{summary}</h6>
-          <h6 className="card-text">{language}</h6>
-          <h6 className="card-text">{premiered}</h6>
+
+          <div className="row">
+            <div className="col-12 d-flex">
+              <h6 className="card-text">
+                <Tag data={language} background="#816797" />
+              </h6>
+              <h6 className="card-text">
+                <Tag data={premiered} background="#51557E" />
+              </h6>
+            </div>
+          </div>
+
         </div>
       </div>
 

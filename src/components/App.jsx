@@ -12,7 +12,7 @@ import { getSeries } from '../utils/getSeries';
  
 function App () {
   const searchRef = useRef(null);
-  const [query, setQuery] = useState('music');
+  const [query, setQuery] = useState('marvel');
 
   const { response, loading } = useFetcher("https://api.tvmaze.com/search/shows",query, getSeries);
 
