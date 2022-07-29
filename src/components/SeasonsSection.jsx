@@ -41,7 +41,7 @@ const SeasonsSection = ({data}) => {
 
             <div className="row my-4">
                 <div className="col-12 p-0">
-                    <div className="accordion" id="accordionExample">
+                    <div className="accordion outline-none border-none" id="accordionExample">
                         {
                             response.map(episode => (
                                 <AccordionItem key={episode.id} data={episode} />

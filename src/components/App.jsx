@@ -12,7 +12,7 @@ import { getSeries } from '../utils/getSeries';
  
 function App () {
   const searchRef = useRef(null);
-  const [query, setQuery] = useState('marvel');
+  const [query, setQuery] = useState('stranger things');
 
   const { response, loading } = useFetcher("https://api.tvmaze.com/search/shows",query, getSeries);
 
@@ -27,7 +27,7 @@ function App () {
   }
 
   return (
-    <section className='container border border-white my-5'>
+    <section className='container my-5'>
 
       <form className="form py-3" action="" onSubmit={ handleSubmit }>
         <div className="row ">

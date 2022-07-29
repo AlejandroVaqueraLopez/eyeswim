@@ -25,3 +25,9 @@ export const getEpisodes = async (url, id ) => {
     const { data } = await axios.get(`${url}/${id}/episodes`);
     return data;
 }
+
+//search all cast of show
+export const getCast = async (url, id ) => {
+    const { data } = await axios.get(`${url}/${id}/cast`);
+    return data;
+}

@@ -1,10 +1,13 @@
 //components
 import Tag from "../Tag";
 
+//native utils
+import {cleanSummary } from "../../utils/cleaner";
+
 const AccordionItem = ({data}) => {
-    console.log(data)
     const {id, name, number, summary, image, rating, runtime, airdate} = data;
-    console.log(name)
+    const imgEpisode = image?.original || image?.medium || "https://distribuidoraatom.com/assets/images/no-found.png";
+    const cleanedSummary = cleanSummary(summary);
     return(
         <div className="accordion-item">
 
@@ -18,13 +21,13 @@ const AccordionItem = ({data}) => {
                 <div className="accordion-body">
                     <div className="row">
                         <div className="col-12 col-md-5">
-                            <img className="br" src={image.original} style={{width:"100%", minHeight: "230px", objectFit: "cover"}}  alt="" />
+                            <img className="br" src={imgEpisode} style={{width:"100%", minHeight: "230px", objectFit: "cover"}}  alt="" />
                         </div>
                         <div className="col-12 col-md-7 py-0 d-flex flex-column align-items-start">
-                            <p>{summary}</p>
+                            <p>{cleanedSummary}</p>
                             <div className="d-flex">
                                 <Tag data={airdate} background="#51557E"/>
-                                <Tag data={runtime} background="#816797"/>
+                                <Tag data={`${runtime} min`} background="#816797"/>
                             </div>
                         </div>
                     </div>

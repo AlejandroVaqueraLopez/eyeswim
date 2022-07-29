@@ -3,11 +3,12 @@
 //components
 import DetailsSection from "./DetailsSection";
 import SeasonsSection from "./SeasonsSection";
+import CastSection from "./CastSection";
 
 //native utils
-import { validateSeriesData, validateSeasonData } from '../utils/validate';
+import { validateSeriesData, validateSeasonData} from '../utils/validate';
 
-const CardSeriesDetails = ({ seriesData, seasonData }) => {
+const CardSeriesDetails = ({ seriesData, seasonData, castData }) => {
 
   //custom function to validate data from api
   const validatedSeriesData = validateSeriesData(seriesData);
@@ -17,6 +18,7 @@ const CardSeriesDetails = ({ seriesData, seasonData }) => {
     <>
       <DetailsSection data={validatedSeriesData}/>
       <SeasonsSection data={validatedSeasonData}/>
+      <CastSection data={castData}/>
     </>
   );
 }
