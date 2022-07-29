@@ -9,10 +9,12 @@ import { BrowserRouter } from 'react-router-dom'
 
 // components
 import Paths from './routes'
+import Footer from './components/Footer'
 
 // postData: delete the <StrictMode> label before go production
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Paths />
+    <Footer />
   </BrowserRouter>
 )

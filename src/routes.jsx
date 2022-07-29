@@ -15,10 +15,6 @@ const Paths = () => {
           <Route index element={<App />} />
           <Route path=':id' element={<SerieDetails />} />
         </Route>
-
-        <Route path='/1' element={<p>1</p>} />
-        <Route path='/2' element={<p>2</p>} />
-        <Route path='/3' element={<p>3</p>} />
       </Routes>
     </section>
   )
