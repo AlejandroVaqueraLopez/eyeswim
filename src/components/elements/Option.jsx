@@ -1,7 +1,7 @@
-const Option = ({text, seasonId}) => {
-    return (
-        <option value={seasonId}>{text}</option>
-    );
+const Option = ({ text, seasonId }) => {
+  return (
+    <option value={seasonId}>{text}</option>
+  )
 }
 
-export default Option;
+export default Option
