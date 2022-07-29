@@ -7,9 +7,7 @@ const useFetcher = (url, query, callback) => {
 
   const getData = async () => {
     const search = await callback(url, query);
-
     setResponse(search);
-
     setLoading(false);//true or false, the spiner must stop
   }
 

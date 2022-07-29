@@ -45,3 +45,24 @@ export const validateSeasonData = (data) => {
     return cleanedSeasons;
 }
 
+/*export const validateCastData = (data) => {
+    console.log(data);
+    const cleanedCast = data.map(actor => {
+        //creating result object
+        return (
+            {
+                id: actor?.person?.id,
+                name: actor?.person?.name|| "No name available",
+                characterName: actor?.character?.name || "No name available",
+                image: actor?.person?.image?.original || data?.image?.medium || "https://distribuidoraatom.com/assets/images/no-found.png",
+            }
+        );
+    })
+
+    return cleanedCast;
+}*/
+
+
+
+
+
